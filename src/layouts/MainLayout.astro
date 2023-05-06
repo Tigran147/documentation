@@ -6,8 +6,6 @@ import HeadSEO from '../components/HeadSEO.astro';
 import Header from '../components/Header/Header.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
-import Footer from '../components/Footer/Footer.astro';
 import { GITHUB_EDIT_URL, SITE } from '../consts';
 
 type Props = CollectionEntry<'docs'>['data'] & {
@@ -26,7 +24,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 		<HeadCommon />
 		<HeadSEO {...data} canonicalUrl={canonicalURL} />
 		<title>
-			{`${data.title} 🚀 ${SITE.title}`}
+			{`${data.title} - ${SITE.title}`}
 		</title>
 		<style>
 			body {
@@ -130,10 +128,5 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 					<slot />
 				</PageContent>
 			</div>
-			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
-				<RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
-			</aside>
-		</main>
-		<Footer path={currentFile} />
 	</body>
 </html>

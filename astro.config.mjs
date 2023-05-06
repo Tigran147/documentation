@@ -10,5 +10,12 @@ export default defineConfig({
 		// Enable React for the Algolia search component.
 		react(),
 	],
-	site: `https://astro.build`,
+	site: 'https://Tigran147.github.io',
+	base: '/mazechanic/documentation',
+	vite: {
+		ssr: {
+			external: ["svgo"]
+		}
+	}
+	
 });
